@@ -1,0 +1,95 @@
+<div class="registro-container">
+    <form class="card" [formGroup]="formularioRegistro" (ngSubmit)="crearCuenta()">
+
+        <div class="form-body">
+            <h1>Registro</h1>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input class="nombre" type="text" name="nombre" id="nombre" formControlName="nombre">
+                @if(nombre?.invalid && nombre?.touched){
+                <small class="error">
+
+                    {{obtenerMensajeError("nombre")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input class="apellido" type="text" name="apellido" id="apellido" formControlName="apellido">
+                @if(apellido?.invalid && apellido?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("apellido")}}
+                </small>
+
+                }
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input class="email" type="text" name="email" id="email" formControlName="email">
+                @if(email?.invalid && email?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("email")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="nombreUsuario">Nombre de Usuario:</label>
+                <input class="nombreUsuario" type="text" name="nombreUsuario" id="nombreUsuario"
+                    formControlName="nombreUsuario">
+                @if(nombreUsuario?.invalid && nombreUsuario?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("nombreUsuario")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input class="password" type="password" name="password" id="password" formControlName="password">
+                @if(password?.invalid && password?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("password")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="repetirPassword">Repetir Password:</label>
+                <input class="repetirPassword" type="password" name="repetirPassword" id="repetirPassword"
+                    formControlName="repetirPassword">
+                @if(repetirPassword?.invalid && repetirPassword?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("repetirPassword")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="descripcion">Descripcion:</label>
+                <input class="descripcion" type="text" name="descripcion" id="descripcion"
+                    formControlName="descripcion">
+                @if(descripcion?.invalid && descripcion?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("descripcion")}}
+                </small>
+                }
+            </div>
+            <div>
+                <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                <input class="fechaNacimiento" type="date" name="fechaNacimiento" id="fechaNacimiento"
+                    formControlName="fechaNacimiento">
+                @if(fechaNacimiento?.invalid && fechaNacimiento?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("fechaNacimiento")}}
+                </small>
+                }
+            </div>
+
+            <div>ACA VA EL TEMA DEL FILE PARA EL PROFILE</div>
+
+
+
+            <button class="registroBtn" type="submit" [disabled]="!formularioRegistro.valid">Crear Usuario</button>
+
+        </div>
+    </form>
+
+
+</div>

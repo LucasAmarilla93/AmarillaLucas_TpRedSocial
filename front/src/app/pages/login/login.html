@@ -1,0 +1,29 @@
+<div class="registro-container">
+    <form class="card" [formGroup]="formularioLogin" (ngSubmit)="loguearse()">
+
+        <div class="form-body">
+            <h1>Registro</h1>
+            <div>
+                <label for="email">Email:</label>
+                <input class="email" type="text" name="email" id="email" formControlName="email">
+                @if(email?.invalid && email?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("email")}}
+                </small>
+                }
+            </div>
+            
+            <div>
+                <label for="password">Password:</label>
+                <input class="password" type="password" name="password" id="password" formControlName="password">
+                @if(password?.invalid && password?.touched){
+                <small class="error">
+                    {{obtenerMensajeError("password")}}
+                </small>
+                }
+            </div>
+    
+            <button class="registroBtn" type="submit" [disabled]="!formularioLogin.valid">Crear Usuario</button>
+        </div>
+    </form>
+</div>
