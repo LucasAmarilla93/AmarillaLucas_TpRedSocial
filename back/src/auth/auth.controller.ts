@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { CreateUsuarioDto } from 'src/usuarios/dto/create-usuario.dto';
-import { UpdateUsuarioDto } from 'src/usuarios/dto/update-usuario.dto';
+import { CreateUsuarioDto } from '../usuarios/dto/create-usuario.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -12,7 +11,7 @@ export class AuthController {
   create(@Body() createUsuarioDTO: CreateUsuarioDto) {
     return this.authService.create(createUsuarioDTO);
   }
-  
+
   /*
   @Post('login')
   (@Body() createUsuarioDTO: CreateUsuarioDto) {
