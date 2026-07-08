@@ -13,10 +13,11 @@ export class AuthController {
     return this.authService.create(createUsuarioDTO);
   }
   
+  /*
   @Post('login')
-  create(@Body() createUsuarioDTO: CreateUsuarioDto) {
+  (@Body() createUsuarioDTO: CreateUsuarioDto) {
     return this.authService.create(createUsuarioDTO);
-  }
+  }*/
 
   
 }
